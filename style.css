@@ -1,0 +1,57 @@
+.heading {
+    text-align: center;
+
+}
+
+
+
+.tracker-input {
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+    grid-gap: 5px;
+}
+
+.f-up-cases,
+.cases {
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+    grid-gap: 5px;
+    margin-top: 5px;
+}
+
+.follow-up-cases {
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+    grid-gap: 5px;
+
+}
+
+h2 {
+    margin-top: 100px;
+}
+
+.input-f-up,
+.input-num {
+    padding: 10px 20px 10px 5px;
+}
+
+.input-date-f-up,
+.input-date {
+    padding: 10px 20px 10px 10px;
+}
+
+.add-btn {
+    padding: 10px 20px;
+}
+
+.btn-div {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2px;
+}
