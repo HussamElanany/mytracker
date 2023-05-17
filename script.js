@@ -4,6 +4,7 @@ const inputNumEl = document.querySelector('.input-num')
 const inputDateEl = document.querySelector('.input-date')
 const casesDiv = document.querySelector('.cases')
 
+
 let tracker = JSON.parse(localStorage.getItem('tracker')) || [{
     num: '725232535645',
     date: '22-7-2022'
@@ -25,6 +26,14 @@ function renderHtml() {
                     </button> 
                    </div>
                    `;
+        // this function allows us to mark the the case as done but it keeps the number 
+
+        const element = document.body
+        element.addEventListener("click", function (e) {
+            if (e.target.className == 'the-tracker-num') {
+                e.target.classList.add('done-method')
+            }
+        });
 
         trackerHTML += html
         console.log(index);
@@ -81,6 +90,14 @@ function renderFollowUpHtml() {
 
                     "> Done </button </div>
                     `;
+        // this function allows us to mark the the case as done but it keeps the number 
+        const element = document.body
+        element.addEventListener("click", function (e) {
+            if (e.target.className == 'the-fup-name') {
+                e.target.className = 'done-method'
+            }
+        });
+
         followUpListHtml += html;
     })
     fUpCases.innerHTML = followUpListHtml;
