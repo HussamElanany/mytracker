@@ -31,7 +31,7 @@ function renderHtml() {
         const element = document.body
         element.addEventListener("click", function (e) {
             if (e.target.className == 'the-tracker-num') {
-                e.target.classList.add('done-method')
+                e.target.classList.add('marked-method')
             }
         });
 
@@ -63,6 +63,7 @@ function addToTracker() {
 
 const followUpInput = document.querySelector('.input-f-up')
 const followUpInputDate = document.querySelector('.input-date-f-up')
+const selectOption = document.querySelector("select")
 
 const fUpCases = document.querySelector('.f-up-cases')
 
@@ -78,10 +79,15 @@ function renderFollowUpHtml() {
     followUpList.forEach(function (todoObject, index) {
 
 
-        const { fUpnum, fUpdate } = todoObject
+        const { fUpnum, fUpdate, sOptionValue } = todoObject
+
+
+        // I added the type the F up it will be save as array's value
         const html = `
                 <div class='the-fup-name'> ${fUpnum} </div> 
                 <div class='the-fup-date'> ${fUpdate} </div>
+                <div class='the-fup-type'> ${sOptionValue} </div>
+              
                     <button class="delete-btn" onclick="
                    
                     followUpList.splice(${index},1);
@@ -90,11 +96,11 @@ function renderFollowUpHtml() {
 
                     "> Done </button </div>
                     `;
-        // this function allows us to mark the the case as done but it keeps the number 
+        // this function allows us to mark the the case as marked or checked  but it keeps the number 
         const element = document.body
         element.addEventListener("click", function (e) {
             if (e.target.className == 'the-fup-name') {
-                e.target.className = 'done-method'
+                e.target.className = 'marked-method'
             }
         });
 
@@ -105,17 +111,23 @@ function renderFollowUpHtml() {
 }
 renderFollowUpHtml()
 
+
+
+
+
 function addToFUpTracker() {
     const fUpnum = followUpInput.value
     const fUpdate = followUpInputDate.value
-
+    const sOptionValue = selectOption.value
 
     followUpList.push({
         fUpnum,
-        fUpdate
+        fUpdate,
+        sOptionValue
     })
+
     console.log(followUpList);
+
     renderFollowUpHtml()
     followUpInput.value = '';
-
 }
