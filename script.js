@@ -5,6 +5,7 @@ const inputDateEl = document.querySelector('.input-date')
 const casesDiv = document.querySelector('.cases')
 
 
+
 let tracker = JSON.parse(localStorage.getItem('tracker')) || [{
     num: '725232535645',
     date: '22-7-2022'
@@ -14,6 +15,7 @@ function renderHtml() {
     tracker.forEach((trackerObject, index) => {
         const { num, date } = trackerObject
         let html = `
+        <div class='flex-container'>
                 <div class='the-tracker-num'> ${num} </div> 
                 <div class='the-tracker-date'> ${date} </div>
                 <div class='btn-div'>
@@ -25,6 +27,7 @@ function renderHtml() {
                     Delete 
                     </button> 
                    </div>
+        </div>           
                    `;
         // this function allows us to mark the the case as done but it keeps the number 
 
@@ -111,10 +114,6 @@ function renderFollowUpHtml() {
 }
 renderFollowUpHtml()
 
-
-
-
-
 function addToFUpTracker() {
     const fUpnum = followUpInput.value
     const fUpdate = followUpInputDate.value
@@ -130,4 +129,11 @@ function addToFUpTracker() {
 
     renderFollowUpHtml()
     followUpInput.value = '';
+}
+// create a scroll up buttom
+function scrollUp() {
+    window.scroll({
+        top: 0,
+        behavior: "smooth",
+    });
 }

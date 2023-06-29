@@ -12,6 +12,22 @@
 
 <body>
 
+    <nav>
+        <div class="logo">
+            <p>Tracker</p>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#"> Home </a></li>
+                <li><a href="#"> Emails </a></li>
+                <li><a href="#"> Emails </a></li>
+                <li><a href="#"> Links </a></li>
+                <li><a href="#"> Numbers </a></li>
+            </ul>
+        </div>
+
+    </nav>
+
     <h1 class="heading"> Tracker</h1>
     <div class="tracker-input">
         <input class="input-num" type="text" placeholder="Number">
@@ -21,7 +37,9 @@
         
         ">Add</button>
     </div>
-    <div class="cases"> </div>
+    <div class="cases-flex-container">
+        <div class="cases"></div>
+    </div>
 
     <h2 class="heading">Follow Up Cases</h2>
     <div class="follow-up-cases">
@@ -49,6 +67,9 @@
 
 
 
+    <div class="scroll-btn-div">
+        <button class="scroll-up-btn" onclick=" scrollUp()">Up</button>
+    </div>
 
 
     <script src="script.js"></script>
