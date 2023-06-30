@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Emails</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <p>Tracker</p>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li></li>
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="emails.html"> Emails </a></li>
+                <!-- <li><a href="#"> Emails </a></li> -->
+                <li><a href="#"> Links </a></li>
+                <li><a href="#"> Numbers </a></li>
+            </ul>
+        </div>
+    </nav>
+    <h2 class="heading-emails">Generate Emails</h2>
+    <div class="container-emails">
+        <input class="cust-name" type="text" placeholder="Custmer's name">
+
+        <input class="cust-number" type="text" placeholder="Custmer's itinerary">
+
+        <input class="cust-refund" type="text" placeholder="Custmer's Refund">
+
+        <input class="cust-request" type="text" placeholder="Custmer's Request">
+
+        <input class="conf-num" type="text" placeholder="Conf# number">
+
+        <select name="product" id="product">
+            <option value="hotel">hotel</option>
+            <option value="coche">coche</option>
+        </select>
+
+        <button onclick="
+                confirmTheCxl()
+            ">Cxl htl & car</button>
+
+        <button onclick="
+                askToWait()
+            ">Wait</button>
+
+        <button onclick="
+               confirmVoid()
+            ">Void</button>
+
+        <div class="email-content">
+
+        </div>
+    </div>
+
+
+    <script src="emails.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

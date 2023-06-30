@@ -9,6 +9,8 @@ body {
 
 }
 
+
+
 nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -22,7 +24,7 @@ nav .logo p {
 
 nav .nav-links ul {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
 }
 
 li {
@@ -33,11 +35,12 @@ a {
     text-decoration: none;
     color: black;
     font-weight: 200;
+    transition: color 0.30s;
 }
 
 a:hover {
     color: lightgrey;
-
+    text-decoration: underline;
 }
 
 .tracker-input {
@@ -168,4 +171,41 @@ h2 {
 
 .marked-method {
     text-decoration: underline;
+}
+
+/* Emails page syles*/
+
+.heading-emails {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+
+}
+
+.container-emails {
+    width: 70%;
+    margin: 20px auto;
+}
+
+.container-emails input {
+    width: 47%;
+    margin: 4px auto;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+    outline: none;
+}
+
+.container-emails select,
+option {
+    width: 100%;
+    margin: 4px auto;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+    outline: none;
+}
+
+.container-emails input:hover {
+    outline: 1px solid darkgray;
 }
