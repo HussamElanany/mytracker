@@ -1,12 +1,29 @@
 
 //  genterate email page
 const custName = document.querySelector('.cust-name')
+
 const custNumber = document.querySelector('.cust-number')
+
+const HotelName = document.querySelector('.htl-name')
+
 const custRequest = document.querySelector('.cust-request')
+
+const custReason = document.querySelector('.cust-reason')
+
+const checkInDate = document.querySelector('.check-in-date')
+
+const checkoutDate = document.querySelector('.check-out-date')
+
 const custRefund = document.querySelector('.cust-refund')
+
 const confNum = document.querySelector('.conf-num')
+
+const confHtlId = document.querySelector('.conf-htl-id')
+
 const productName = document.querySelector('#product')
+
 const emailContent = document.querySelector('.email-content')
+
 function confirmTheCxl() {
 
     let emailHTML = `
@@ -40,7 +57,10 @@ function confirmTheCxl() {
    `
 
     emailContent.innerHTML = emailHTML;
-
+    refresh()
+    custRequest.style.display = 'none'
+    confNum.style.display = 'none'
+    clearInputs()
 }
 
 function askToWait() {
@@ -72,7 +92,11 @@ function askToWait() {
    `
 
     emailContent.innerHTML = emailHTML;
-
+    confNum.style.display = 'none'
+    custRefund.style.display = 'none'
+    custRequest.style.display = 'none'
+    productName.style.display = 'none'
+    clearInputs()
 }
 
 function confirmVoid() {
@@ -112,6 +136,94 @@ function confirmVoid() {
    `
 
     emailContent.innerHTML = emailHTML;
-
+    refresh()
+    custRequest.style.display = 'none'
+    productName.style.display = 'none'
+    clearInputs()
 }
-console.log(emailContent)
+
+function askHotelForWaiver() {
+
+    let emailHTML = `
+    <p> 
+    Dear ${HotelName.value}
+    <br>
+    <br>
+    Hello from the Expedia Customer Support Team! We're reaching out as our mutual customer, ${custName.value}  has asked to ${custRequest.value} as ${custReason.value}  
+    <br>
+    Due to this situation, we'd like to request a waiver for our customer.
+    <br>
+    <br>
+    Here's a summary of the customer's original booking:
+    <br>
+    <br>
+    Traveler name(s): ${custName.value}
+    <br>
+    Hotel confirmation ID: ${confHtlId.value}
+    <br>
+    Check-in date: ${checkInDate.value}
+    <br>
+    Check-out date: ${checkoutDate.value}   
+    <br>
+    <br>
+                        
+    If you could review this request and let us know your decision within 1 business day, including the information below, we would appreciate it!
+    <br>
+    <br>
+    Approver's name:
+    <br>
+    <br>
+    Approver's position:
+    <br>
+    Number of nights approved for refund:
+    <br>
+    Additional comments:
+    <br>
+    <br>
+    We hope you can accommodate our customer, and appreciate your support. Thanks for taking a look, and for your ongoing partnership!
+    <br>
+    <br>
+    Best regards,
+    
+    <br>
+    <br>
+    <br>
+    Luis .
+    Expedia Customer Support Team
+    
+    </p>
+   `
+
+    emailContent.innerHTML = emailHTML;
+    refresh()
+
+    productName.style.display = 'none'
+    custNumber.style.display = 'none'
+    custRefund.style.display = 'none'
+    confNum.style.display = 'none'
+    clearInputs()
+}
+
+// Clear Inputs 
+
+function clearInputs() {
+    custName.value = ''
+    custNumber.value = ''
+    custRefund.value = ''
+    custRequest.value = ''
+    confNum.value = ''
+    //custName.value = ''
+}
+
+// Refresh Page
+
+function refresh() {
+    custName.style.display = 'inline-block'
+    custNumber.style.display = 'inline-block'
+    custRefund.style.display = 'inline-block'
+    custRequest.style.display = 'inline-block'
+    productName.style.display = 'inline-block'
+    confNum.style.display = 'inline-block'
+}
+//console.log(emailContent)
+

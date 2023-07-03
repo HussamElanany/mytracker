@@ -9,14 +9,13 @@ body {
 
 }
 
-
-
 nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
 nav .logo p {
+    padding-left: 40px;
     font-size: 1.5rem;
     font-weight: bold;
 
@@ -53,7 +52,11 @@ a:hover {
 }
 
 .tracker-input input {
-    width: 39%;
+    width: 41%;
+}
+
+.tracker-input button {
+    width: 12%;
 }
 
 .cases-flex-container {

@@ -27,13 +27,24 @@
     </nav>
     <h2 class="heading-emails">Generate Emails</h2>
     <div class="container-emails">
+        <!-- Emails Input -->
         <input class="cust-name" type="text" placeholder="Custmer's name">
 
         <input class="cust-number" type="text" placeholder="Custmer's itinerary">
 
+        <input class="htl-name" type="text" placeholder="Hotels's name">
+
         <input class="cust-refund" type="text" placeholder="Custmer's Refund">
 
         <input class="cust-request" type="text" placeholder="Custmer's Request">
+
+        <input class="cust-reason" type="text" placeholder="Custmer's Reason">
+
+        <input class="check-in-date" type="text" placeholder="Check in Date">
+
+        <input class="check-out-date" type="text" placeholder="Check out Date">
+
+        <input class="conf-htl-id" type="text" placeholder="Conf# HTL number">
 
         <input class="conf-num" type="text" placeholder="Conf# number">
 
@@ -42,6 +53,9 @@
             <option value="coche">coche</option>
         </select>
 
+
+        <!-- Emails Output -->
+        <br>
         <button onclick="
                 confirmTheCxl()
             ">Cxl htl & car</button>
@@ -53,7 +67,15 @@
         <button onclick="
                confirmVoid()
             ">Void</button>
+        <button onclick="
+               askHotelForWaiver()
+            ">Waiver Request</button>
 
+        <!-- <button onclick="
+                refresh()
+        ">
+            Refresh
+        </button> -->
         <div class="email-content">
 
         </div>
