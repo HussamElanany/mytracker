@@ -60,7 +60,13 @@ function confirmTheCxl() {
     refresh()
     custRequest.style.display = 'none'
     confNum.style.display = 'none'
-    clearInputs()
+    HotelName.style.display = 'none'
+    custRequest.style.display = 'none'
+    custReason.style.display = 'none'
+    checkInDate.style.display = 'none'
+    checkoutDate.style.display = 'none'
+    confHtlId.style.display = 'none'
+
 }
 
 function askToWait() {
@@ -93,10 +99,56 @@ function askToWait() {
 
     emailContent.innerHTML = emailHTML;
     confNum.style.display = 'none'
+    custReason.style.display = 'none'
+    checkInDate.style.display = 'none'
+    checkoutDate.style.display = 'none'
+    confHtlId.style.display = 'none'
+    HotelName.style.display = 'none'
     custRefund.style.display = 'none'
     custRequest.style.display = 'none'
     productName.style.display = 'none'
-    clearInputs()
+
+}
+
+function askToSendJustification() {
+
+    let emailHTML = `
+   <p> 
+        Estimado/a don/doña ${custName.value}
+        </br>
+        Gracias por contactar con el Departamento de Atención al Cliente de Expedia
+        En relación a su reserva con número de itinerario ${custNumber.value} 
+        </br>
+        </br>
+        Por favor responda  a este correo con extracto bancario desde la fecha de la compra hasta hoy. 
+        </br>
+        </br>
+        Lamentamos las molestias que esto haya podido ocasionarle y agradecemos su paciencia y colaboración en todo momento.
+        </br>
+        Reciba un cordial saludo.
+        </br>
+        Atentamente
+        </br> 
+        Luis
+        </br>
+        Dpto. de Atención al Cliente
+        </br>
+        Expedia
+
+   </p>
+   `
+
+    emailContent.innerHTML = emailHTML;
+    confNum.style.display = 'none'
+    custReason.style.display = 'none'
+    checkInDate.style.display = 'none'
+    checkoutDate.style.display = 'none'
+    confHtlId.style.display = 'none'
+    HotelName.style.display = 'none'
+    custRefund.style.display = 'none'
+    custRequest.style.display = 'none'
+    productName.style.display = 'none'
+
 }
 
 function confirmVoid() {
@@ -137,9 +189,14 @@ function confirmVoid() {
 
     emailContent.innerHTML = emailHTML;
     refresh()
+    HotelName.style.display = 'none'
     custRequest.style.display = 'none'
+    custReason.style.display = 'none'
+    checkInDate.style.display = 'none'
+    checkoutDate.style.display = 'none'
+    confHtlId.style.display = 'none'
     productName.style.display = 'none'
-    clearInputs()
+
 }
 
 function askHotelForWaiver() {
@@ -196,22 +253,27 @@ function askHotelForWaiver() {
 
     emailContent.innerHTML = emailHTML;
     refresh()
-
     productName.style.display = 'none'
     custNumber.style.display = 'none'
     custRefund.style.display = 'none'
     confNum.style.display = 'none'
-    clearInputs()
+
 }
 
 // Clear Inputs 
 
 function clearInputs() {
     custName.value = ''
-    custNumber.value = ''
+    HotelName.value = ''
+    custReason.value = ''
+    custRequest.value = ''
+    checkInDate.value = ''
+    HotelName.value = ''
+    checkoutDate.value = ''
     custRefund.value = ''
     custRequest.value = ''
     confNum.value = ''
+    confHtlId.value = ''
     //custName.value = ''
 }
 
@@ -219,11 +281,18 @@ function clearInputs() {
 
 function refresh() {
     custName.style.display = 'inline-block'
+    HotelName.style.display = 'inline-block'
     custNumber.style.display = 'inline-block'
     custRefund.style.display = 'inline-block'
+    custReason.style.display = 'inline-block'
     custRequest.style.display = 'inline-block'
+    custRequest.style.display = 'inline-block'
+    checkInDate.style.display = 'inline-block'
+    checkoutDate.style.display = 'inline-block'
     productName.style.display = 'inline-block'
     confNum.style.display = 'inline-block'
+    confHtlId.style.display = 'inline-block'
+    clearInputs()
 }
 //console.log(emailContent)
 
