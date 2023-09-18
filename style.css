@@ -52,7 +52,7 @@ a:hover {
 }
 
 .tracker-input input {
-    width: 41%;
+    width: 88%;
 }
 
 .tracker-input button {
@@ -118,9 +118,18 @@ h2 {
     margin-top: 100px;
 }
 
-.input-f-up,
-.input-num {
+.inputs-container {
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 3fr 3fr 1fr;
+    grid-gap: 5px;
+    margin-top: 5px;
+}
+
+.input-f-up {
     padding: 10px 20px 10px 5px;
+
 }
 
 .input-date-f-up,

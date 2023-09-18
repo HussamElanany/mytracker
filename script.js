@@ -4,16 +4,18 @@ const inputNumEl = document.querySelector('.input-num')
 const inputDateEl = document.querySelector('.input-date')
 const casesDiv = document.querySelector('.cases')
 
-
-
+let getDate;
 let tracker = JSON.parse(localStorage.getItem('tracker')) || [{
     num: '725232535645',
-    date: '22-7-2022'
+    date: getDate
 }]
 function renderHtml() {
     let trackerHTML = '';
     tracker.forEach((trackerObject, index) => {
         const { num, date } = trackerObject
+        let dateFunc = new Date()
+        let theDate = dateFunc.toString()
+        getDate = theDate.slice(0, 25)
         let html = `
         <div class='flex-container'>
                 <div class='the-tracker-num'> ${num} </div> 
@@ -49,7 +51,7 @@ renderHtml()
 
 function addToTracker() {
     const num = inputNumEl.value
-    const date = inputDateEl.value
+    const date = getDate
     console.log(num);
     console.log(date);
     tracker.push({
@@ -73,7 +75,7 @@ const fUpCases = document.querySelector('.f-up-cases')
 
 let followUpList = JSON.parse(localStorage.getItem('followUp')) || [{
     fUpnum: '765512121156',
-    fUpdate: '22-7-2022'
+    fUpdate: getDate
 }]
 
 function renderFollowUpHtml() {
@@ -83,7 +85,9 @@ function renderFollowUpHtml() {
 
 
         const { fUpnum, fUpdate, sOptionValue } = todoObject
-
+        let dateFunc = new Date()
+        let theDate = dateFunc.toString()
+        FUpgetDate = theDate.slice(0, 25)
 
         // I added the type the F up it will be save as array's value
         const html = `
@@ -116,7 +120,7 @@ renderFollowUpHtml()
 
 function addToFUpTracker() {
     const fUpnum = followUpInput.value
-    const fUpdate = followUpInputDate.value
+    const fUpdate = FUpgetDate
     const sOptionValue = selectOption.value
 
     followUpList.push({
